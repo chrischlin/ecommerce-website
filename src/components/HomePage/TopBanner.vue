@@ -1,6 +1,11 @@
 <template>
   <v-carousel cycle height="500" show-arrows="hover" hide-delimiter-background>
-    <v-carousel-item v-for="(item, i) in images" :key="i" :src="item.src" cover>
+    <v-carousel-item
+      v-for="(image, i) in images"
+      :key="i"
+      :src="image.src"
+      cover
+    >
     </v-carousel-item>
   </v-carousel>
 </template>
@@ -11,8 +16,8 @@ export default {
     return {
       images: [
         { src: "images/topbanners/Slide1.jpeg" },
-        { src: "images/topbanners/Slide2.jpeg" },
-        { src: "images/topbanners/Slide3.jpeg" },
+        { src: "images/topbanners/banner2.jpeg" },
+        { src: "images/topbanners/banner3.jpeg" },
       ],
     };
   },

@@ -22,8 +22,16 @@
         Sign up to our newsletter for 10% off your first order and claim your
         birthday reward!
       </p>
-      <Input type="email" placeholder="Enter your Email" />
-      <Button> SIGN UP </Button>
+      <div class="d-flex flex-row mb-6" style="margin-top: 20px">
+        <input
+          type="email"
+          placeholder="Enter your Email"
+          size="50"
+          style="border: 1px solid grey; margin-right: 20px"
+        />
+        <v-btn color="black"> SIGN UP </v-btn>
+      </div>
+
       <div class="icons">
         <a href=""
           ><font-awesome-icon icon="fa-brands fa-facebook" size="2x"
@@ -64,15 +72,6 @@ export default {
 </script>
 
 <style>
-button {
-  margin-top: 10px;
-  width: 100px;
-  background-color: black;
-  color: white;
-  font-family: sans-serif;
-  letter-spacing: 1.5px;
-}
-
 .footer {
   display: flex;
   align-items: center;
