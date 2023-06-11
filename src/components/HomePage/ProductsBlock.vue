@@ -7,7 +7,6 @@
       :style="{ backgroundImage: 'url(' + product.imageUrl + ')' }"
     >
       {{ product.name }}
-      <!-- <v-img width="300" height="300" :src="product.imageUrl" cover></v-img> -->
     </div>
   </div>
 </template>
@@ -46,8 +45,8 @@ export default {
 .products-block {
   display: flex;
   justify-content: center;
-  gap: 30px;
-  height: 600px;
+  gap: 40px;
+  height: 400px;
   background-color: white;
   margin-top: 100px;
 }
