@@ -5,6 +5,8 @@ import TopBanner from "../src/components/HomePage/TopBanner.vue";
 import ProductsBlock from "../src/components/HomePage/ProductsBlock.vue";
 import BestSeller from "../src/components/HomePage/BestSeller.vue";
 import OtherBanner from "../src/components/HomePage/OtherBanner.vue";
+import Series from "../src/components/HomePage/Series.vue";
+import Slogan from "../src/components/HomePage/Slogan.vue";
 
 export default {
   components: {
@@ -14,6 +16,8 @@ export default {
     ProductsBlock,
     BestSeller,
     OtherBanner,
+    Series,
+    Slogan,
   },
 };
 </script>
@@ -25,6 +29,8 @@ export default {
     <ProductsBlock />
     <BestSeller />
     <OtherBanner />
+    <Series />
+    <Slogan />
     <Footer />
   </div>
 </template>
