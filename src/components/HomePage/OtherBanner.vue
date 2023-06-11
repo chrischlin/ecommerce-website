@@ -1,0 +1,52 @@
+<template>
+  <div class="banner">
+    <div class="collection">
+      <div class="collection-pearl">Collection Pearl</div>
+      <div class="content">Elegance is Effortless.</div>
+      <div class="button-container">
+        <v-btn class="button">SHOP NOW</v-btn>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script></script>
+
+<style scoped>
+.banner {
+  height: 600px;
+  background-image: url("images/bestsellers/pearlnecklace1.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+.collection {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  margin: 30px;
+}
+.collection-pearl {
+  color: white;
+  font-size: 50px;
+}
+
+.content {
+  color: white;
+  font-size: 20px;
+  font-family: "Roboto";
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.button {
+  height: 48px;
+  width: 150px;
+  background-color: #444444;
+  color: white;
+}
+</style>

@@ -14,6 +14,9 @@
         <p>{{ formatPrice(product.price) }}</p>
       </div>
     </div>
+    <div class="button-container">
+      <v-btn class="button">SHOP NOW</v-btn>
+    </div>
   </div>
 </template>
 
@@ -72,5 +75,18 @@ export default {
 
 .image {
   margin-bottom: 20px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.button {
+  height: 48px;
+  width: 150px;
+  background-color: #444444;
+  color: white;
+  letter-spacing: 1.5px;
 }
 </style>
