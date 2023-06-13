@@ -1,8 +1,8 @@
 <template>
   <div class="navbar">
     <div class="left-part">
-      <a href="">Home</a>
-      <a href="">Our Story</a>
+      <router-link to="/">Home</router-link>
+      <router-link to="/our-story">Our Story</router-link>
       <a href="">Products</a>
       <a href="">FAQ</a>
     </div>
