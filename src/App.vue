@@ -15,5 +15,3 @@ export default {
   <router-view></router-view>
   <Footer />
 </template>
-
-<style scoped></style>

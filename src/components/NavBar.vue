@@ -3,8 +3,7 @@
     <div class="left-part">
       <router-link to="/">Home</router-link>
       <router-link to="/our-story">Our Story</router-link>
-      <a href="">Products</a>
-      <a href="">FAQ</a>
+      <router-link to="/products">Products</router-link>
     </div>
     <div class="title">Lin's Collection</div>
     <div class="right-part">

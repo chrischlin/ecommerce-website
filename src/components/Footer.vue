@@ -33,17 +33,19 @@
       </div>
 
       <div class="icons">
-        <a href=""
+        <a href="https://www.facebook.com/"
           ><font-awesome-icon icon="fa-brands fa-facebook" size="2x"
         /></a>
-        <a href=""
+        <a href="https://www.instagram.com/"
           ><font-awesome-icon icon="fa-brands fa-instagram" size="2x"
         /></a>
-        <a href=""
+        <a href="https://twitter.com/"
           ><font-awesome-icon icon="fa-brands fa-twitter" size="2x"
         /></a>
-        <a href=""><font-awesome-icon icon="fa-brands fa-line" size="2x" /></a>
-        <a href=""
+        <a href="https://line.me/"
+          ><font-awesome-icon icon="fa-brands fa-line" size="2x"
+        /></a>
+        <a href="https://www.pinterest.com/"
           ><font-awesome-icon icon="fa-brands fa-pinterest" size="2x"
         /></a>
       </div>

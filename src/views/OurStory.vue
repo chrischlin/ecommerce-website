@@ -35,7 +35,7 @@
   justify-content: center;
   align-items: center;
   height: 400px;
-  background-image: url("images/banners/banner2.jpeg");
+  background-image: url("images/banners/banner1.jpeg");
   background-size: cover;
   background-position: center;
   font-size: 40px;
