@@ -1,19 +1,25 @@
 <template>
   <div class="title">All Products</div>
+
   <v-container>
     <v-row class="product-row">
-      <v-col cols="3" v-for="product in products" :key="product.name">
-        <v-img
-          class="ml-auto mr-auto mt-auto mb-auto"
-          :width="250"
-          :height="250"
-          cover
-          :src="product.imageUrl"
-          :alt="product.name"
-        ></v-img>
-        <div class="ml-auto mr-auto mt-auto mb-auto">
-          {{ product.name }}
-        </div>
+      <v-col cols="3" v-for="product in productList" :key="product.id">
+        <router-link :to="{ name: 'product.info', params: { id: product.id } }">
+          <v-img
+            class="ml-auto mr-auto mt-auto mb-auto"
+            :width="250"
+            :height="250"
+            cover
+            :src="product.imageUrl"
+            :alt="product.name"
+          ></v-img>
+        </router-link>
+        <router-link to="/">
+          <div class="ml-auto mr-auto mt-auto mb-auto">
+            {{ product.name }}
+          </div></router-link
+        >
+
         <div class="ml-auto mr-auto mt-auto mb-auto">
           {{ formatPrice(product.price) }}
         </div>
@@ -26,63 +32,12 @@
 </template>
 
 <script>
+import { products } from "../../data/data.js";
+
 export default {
   data() {
     return {
-      products: [
-        {
-          name: "Golden Hour Necklace",
-          imageUrl: "images/bestsellers/goldenhournecklace1.jpeg",
-          price: 950,
-        },
-
-        {
-          name: "Gold Chain Bracelet",
-          imageUrl: "images/bestsellers/goldchainbraclet1.jpeg",
-          price: 600,
-        },
-
-        {
-          name: "Gold Pearl Tear Earring",
-          imageUrl: "images/products/earrings2.jpeg",
-          price: 800,
-        },
-
-        {
-          name: "Three-Stran Pearl Necklace",
-          imageUrl: "images/series/3stranpearlnecklace.jpeg",
-          price: 1500,
-        },
-
-        {
-          name: "Star Pearl Pin",
-          imageUrl: "images/series/pearlpin.jpeg",
-          price: 450,
-        },
-
-        {
-          name: "Pearl Rings Set",
-          imageUrl: "images/series/pearlring.jpeg",
-          price: 900,
-        },
-        {
-          name: "Golden Hour Necklace",
-          imageUrl: "images/bestsellers/goldenhournecklace1.jpeg",
-          price: 950,
-        },
-
-        {
-          name: "Gold Chain Bracelet",
-          imageUrl: "images/bestsellers/goldchainbraclet1.jpeg",
-          price: 600,
-        },
-
-        {
-          name: "Gold Pearl Tear Earring",
-          imageUrl: "images/products/earrings2.jpeg",
-          price: 800,
-        },
-      ],
+      productList: products,
     };
   },
 
