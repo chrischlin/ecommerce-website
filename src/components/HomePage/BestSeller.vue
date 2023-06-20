@@ -3,19 +3,26 @@
     <div class="title">Meet Our Best Sellers</div>
     <div class="product">
       <div v-for="product in products" :key="product.name">
-        <v-img
-          class="image"
-          :width="250"
-          :height="250"
-          cover
-          :src="product.imageUrl"
-        ></v-img>
-        <p>{{ product.name }}</p>
+        <router-link :to="{ name: 'product.info', params: { id: product.id } }">
+          <v-img
+            class="image"
+            :width="250"
+            :height="250"
+            cover
+            :src="product.imageUrl"
+          >
+          </v-img>
+        </router-link>
+        <router-link :to="{ name: 'product.info', params: { id: product.id } }">
+          {{ product.name }}
+        </router-link>
         <p>{{ formatPrice(product.price) }}</p>
       </div>
     </div>
     <div class="button-container">
-      <v-btn class="button">SHOP NOW</v-btn>
+      <router-link to="/products">
+        <v-btn class="button">SHOP NOW</v-btn>
+      </router-link>
     </div>
   </div>
 </template>
@@ -26,18 +33,21 @@ export default {
     return {
       products: [
         {
+          id: 4,
           name: "Three-Stran Pearl Necklace",
           imageUrl: "images/bestsellers/pearlnecklace3.jpeg",
           price: 1500,
         },
 
         {
+          id: 1,
           name: "Golden Hour Necklace",
           imageUrl: "images/bestsellers/goldenhournecklace1.jpeg",
           price: 950,
         },
 
         {
+          id: 2,
           name: "Gold Chain Bracelet",
           imageUrl: "images/bestsellers/goldchainbraclet1.jpeg",
           price: 600,

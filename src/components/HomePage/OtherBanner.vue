@@ -4,7 +4,9 @@
       <div class="collection-pearl">Collection Pearl</div>
       <div class="content">Elegance is Effortless.</div>
       <div class="button-container">
-        <v-btn class="button">SHOP NOW</v-btn>
+        <router-link to="/products">
+         <v-btn class="button">SHOP NOW</v-btn>
+        </router-link>
       </div>
     </div>
   </div>

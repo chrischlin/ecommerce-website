@@ -1,28 +1,35 @@
 <template>
   <div class="products-block">
-    <div
-      class="product"
-      v-for="product in products"
-      :key="product.name"
-      :style="{ backgroundImage: 'url(' + product.imageUrl + ')' }"
-    >
-      {{ product.name }}
+    <div v-for="product in categories" :key="product.name">
+      <router-link
+        :to="{ name: 'product.category', params: { category: product.name } }"
+      >
+        <div
+          class="product"
+          :style="{ backgroundImage: 'url(' + product.imageUrl + ')' }"
+        >
+          {{ product.name }}
+        </div>
+      </router-link>
     </div>
   </div>
 </template>
 
 <script>
+import { products } from "../../data/data.js";
 export default {
   data() {
     return {
-      products: [
+      productList: products,
+
+      categories: [
         {
           name: "Necklaces",
           imageUrl: "images/products/necklaces2.jpeg",
         },
 
         {
-          name: "Earings",
+          name: "Earrings",
           imageUrl: "images/products/earrings1.jpeg",
         },
 
@@ -38,6 +45,17 @@ export default {
       ],
     };
   },
+
+  // methods: {
+  //   navigateToCategory(category) {
+  //     this.$router.push({ name: "allProducts", params: { category } });
+  //   },
+  // },
+  // methods: {
+  //   filteredCategory() {
+  //     this.products.filter( e => { e.});
+  //   },
+  // },
 };
 </script>
 

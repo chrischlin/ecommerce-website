@@ -3,7 +3,7 @@
 
   <v-container>
     <v-row class="product-row">
-      <v-col cols="3" v-for="product in productList" :key="product.id">
+      <v-col cols="3" v-for="product in productDetail" :key="product.id">
         <router-link :to="{ name: 'product.info', params: { id: product.id } }">
           <v-img
             class="ml-auto mr-auto mt-auto mb-auto"
@@ -14,7 +14,7 @@
             :alt="product.name"
           ></v-img>
         </router-link>
-        <router-link to="/">
+        <router-link :to="{ name: 'product.info', params: { id: product.id } }">
           <div class="ml-auto mr-auto mt-auto mb-auto">
             {{ product.name }}
           </div></router-link
@@ -26,9 +26,7 @@
       </v-col>
     </v-row>
   </v-container>
-  <div class="text-center">
-    <v-pagination v-model="page" :length="4" rounded="circle"></v-pagination>
-  </div>
+  <div class="text-center"></div>
 </template>
 
 <script>
@@ -44,6 +42,19 @@ export default {
   methods: {
     formatPrice(value) {
       return "$" + value.toLocaleString();
+    },
+  },
+
+  computed: {
+    productDetail() {
+      const category = this.$route.params.category;
+      if (category && category !== "All Products") {
+        return this.productList.filter(
+          (product) => product.category === category
+        );
+      } else {
+        return this.productList;
+      }
     },
   },
 };
