@@ -15,7 +15,7 @@ export default {
   data() {
     return {
       images: [
-        { src: "images/topbanners/Slide1.jpeg" },
+        { src: "images/topbanners/banner1.jpeg" },
         { src: "images/topbanners/banner2.jpeg" },
         { src: "images/topbanners/banner3.jpeg" },
       ],

@@ -1,5 +1,7 @@
 <template>
-  <div class="title">All Products</div>
+  <div class="title">
+    {{ categoryTitle }}
+  </div>
 
   <v-container>
     <v-row class="product-row">
@@ -55,6 +57,13 @@ export default {
       } else {
         return this.productList;
       }
+    },
+    categoryTitle() {
+      const category = this.$route.params.category;
+      const title = this.productList.find(
+        (product) => product.category === category
+      );
+      return title ? title.category : "All Products";
     },
   },
 };

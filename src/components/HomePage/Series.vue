@@ -31,24 +31,27 @@ export default {
     return {
       products: [
         {
-          id: 4,
+          id: 3,
+          category: "Necklaces",
           name: "Three-Stran Pearl Necklace",
-          imageUrl: "images/series/3stranpearlnecklace.jpeg",
+          imageUrl: "/images/products/necklaces3.jpeg",
           price: 1500,
         },
 
         {
-          id: 5,
-          name: "Star Pearl Pin",
-          imageUrl: "images/series/pearlpin.jpeg",
-          price: 450,
+          id: 4,
+          category: "Earrings",
+          name: "Pearl Tear Earring",
+          imageUrl: "/images/products/earrings1.jpeg",
+          price: 600,
         },
 
         {
-          id: 6,
-          name: "Pearl Rings Set",
-          imageUrl: "images/series/pearlring.jpeg",
-          price: 900,
+          id: 5,
+          category: "Earrings",
+          name: "Sunshine Pearl Earring",
+          imageUrl: "/images/products/earrings2.jpeg",
+          price: 550,
         },
       ],
     };

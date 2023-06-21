@@ -25,22 +25,22 @@ export default {
       categories: [
         {
           name: "Necklaces",
-          imageUrl: "images/products/necklaces2.jpeg",
+          imageUrl: "images/categories/necklaces.jpeg",
         },
 
         {
           name: "Earrings",
-          imageUrl: "images/products/earrings1.jpeg",
+          imageUrl: "images/categories/earrings.jpeg",
         },
 
         {
           name: "Rings",
-          imageUrl: "images/products/rings2.jpeg",
+          imageUrl: "images/categories/rings.jpeg",
         },
 
         {
           name: "Bracelets",
-          imageUrl: "images/products/bracelets2.jpeg",
+          imageUrl: "images/categories/bracelets.jpeg",
         },
       ],
     };

@@ -2,7 +2,7 @@
   <div class="footer">
     <div class="company">
       <p style="font-size: 20px; font-weight: bold">COMPANY</p>
-      <a href="#">Our Story</a>
+      <router-link to="/our-story">Our Story</router-link>
       <a href="#">Store-info</a>
       <a href="#">Cooperation</a>
       <a href="#">Franchising</a>

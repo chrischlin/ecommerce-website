@@ -5,7 +5,7 @@
       <div class="content">Elegance is Effortless.</div>
       <div class="button-container">
         <router-link to="/products">
-         <v-btn class="button">SHOP NOW</v-btn>
+          <v-btn class="button">SHOP NOW</v-btn>
         </router-link>
       </div>
     </div>
@@ -17,7 +17,7 @@
 <style scoped>
 .banner {
   height: 600px;
-  background-image: url("images/bestsellers/pearlnecklace1.jpeg");
+  background-image: url("images/banners/banner5.jpeg");
   background-size: cover;
   background-position: center;
 }

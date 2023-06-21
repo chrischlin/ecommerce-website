@@ -33,24 +33,27 @@ export default {
     return {
       products: [
         {
-          id: 4,
-          name: "Three-Stran Pearl Necklace",
-          imageUrl: "images/bestsellers/pearlnecklace3.jpeg",
-          price: 1500,
-        },
-
-        {
-          id: 1,
-          name: "Golden Hour Necklace",
-          imageUrl: "images/bestsellers/goldenhournecklace1.jpeg",
-          price: 950,
+          id: 10,
+          category: "Bracelets",
+          name: "Gold Chain Bracelet",
+          imageUrl: "/images/products/bracelets1.jpeg",
+          price: 600,
         },
 
         {
           id: 2,
-          name: "Gold Chain Bracelet",
-          imageUrl: "images/bestsellers/goldchainbraclet1.jpeg",
-          price: 600,
+          category: "Necklaces",
+          name: "Golden Hours Necklaces",
+          imageUrl: "/images/products/necklaces2.jpeg",
+          price: 850,
+        },
+
+        {
+          id: 3,
+          category: "Necklaces",
+          name: "Three-Stran Pearl Necklace",
+          imageUrl: "/images/products/necklaces3.jpeg",
+          price: 1500,
         },
       ],
     };

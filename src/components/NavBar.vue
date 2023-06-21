@@ -6,7 +6,15 @@
       <div class="text-center">
         <v-menu open-on-hover>
           <template v-slot:activator="{ props }">
-            <router-link to="/products" v-bind="props">Products</router-link>
+            <router-link
+              :to="{
+                name: 'product.category',
+                params: { category: 'All Products' },
+              }"
+              v-bind="props"
+            >
+              Products
+            </router-link>
           </template>
           <v-list>
             <v-list-item v-for="(item, index) in items" :key="index">
