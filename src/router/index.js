@@ -4,6 +4,7 @@ import OurStory from "../views/OurStory.vue";
 import Products from "../views/Products.vue";
 import ProductInfo from "../components/Products/ProductInfo.vue";
 import AllProducts from "../components/Products/AllProducts.vue";
+import Cart from "../views/Cart.vue";
 
 const routes = [
   {
@@ -31,6 +32,11 @@ const routes = [
     name: "product.info",
     component: ProductInfo,
   },
+  {
+    path: "/cart",
+    name: "cart",
+    component: Cart,
+  }
 ];
 
 const router = createRouter({

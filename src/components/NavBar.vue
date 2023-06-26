@@ -34,7 +34,7 @@
     <div class="right-part">
       <a href=""><font-awesome-icon icon="fa-solid fa-search" /></a>
       <a href=""><font-awesome-icon icon="fa-solid fa-user" /></a>
-      <a href=""><font-awesome-icon icon="fa-solid fa-cart-shopping" /></a>
+      <router-link to="/cart"><font-awesome-icon icon="fa-solid fa-cart-shopping" /></router-link>
     </div>
   </div>
 </template>
@@ -76,6 +76,7 @@ export default {
   display: flex;
   height: 80px;
   width: 100%;
+  padding: 20px;
   justify-content: space-between;
   align-items: center;
   border-bottom-style: solid;
