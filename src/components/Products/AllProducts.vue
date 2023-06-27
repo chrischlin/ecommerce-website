@@ -8,7 +8,7 @@
       <v-col cols="3" v-for="product in productDetail" :key="product.id">
         <router-link :to="{ name: 'product.info', params: { id: product.id } }">
           <v-img
-            class="ml-auto mr-auto mt-auto mb-auto"
+            class="ml-auto mr-auto mt-auto mb-custom"
             :width="250"
             :height="250"
             cover
@@ -83,6 +83,9 @@ export default {
   color: white;
 }
 
+.mb-custom {
+  margin-bottom: 20px;
+}
 .product-row {
   display: flex;
   justify-content: start;
