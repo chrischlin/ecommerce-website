@@ -94,6 +94,7 @@ export default {
   justify-content: center;
   gap: 20px;
   margin: 100px;
+  margin-top: 180px;
 }
 
 .details {

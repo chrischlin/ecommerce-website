@@ -60,6 +60,7 @@ export default {
   font-weight: bold;
   text-align: center;
   margin: 50px;
+  margin-top: 130px;
 }
 
 .list-title {

@@ -41,6 +41,7 @@
   font-size: 40px;
   font-weight: bold;
   color: white;
+  margin-top: 80px;
 }
 
 .text-content {

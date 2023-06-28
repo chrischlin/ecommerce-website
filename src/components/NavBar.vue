@@ -34,7 +34,9 @@
     <div class="right-part">
       <a href=""><font-awesome-icon icon="fa-solid fa-search" /></a>
       <a href=""><font-awesome-icon icon="fa-solid fa-user" /></a>
-      <router-link to="/cart"><font-awesome-icon icon="fa-solid fa-cart-shopping" /></router-link>
+      <router-link to="/cart"
+        ><font-awesome-icon icon="fa-solid fa-cart-shopping"
+      /></router-link>
     </div>
   </div>
 </template>
@@ -81,6 +83,12 @@ export default {
   align-items: center;
   border-bottom-style: solid;
   border-bottom-color: #e5dcd2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background-color: white;
 }
 
 .left-part {

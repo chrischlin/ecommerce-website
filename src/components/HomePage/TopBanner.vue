@@ -1,5 +1,11 @@
 <template>
-  <v-carousel cycle height="500" show-arrows="hover" hide-delimiter-background>
+  <v-carousel
+    class="content"
+    cycle
+    height="500"
+    show-arrows="hover"
+    hide-delimiter-background
+  >
     <v-carousel-item
       v-for="(image, i) in images"
       :key="i"
@@ -23,3 +29,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.content {
+  margin-top: 80px;
+}
+</style>
