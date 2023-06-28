@@ -18,7 +18,10 @@
       </div>
     </div>
     <div class="button-container">
-      <router-link to="/products">
+      <router-link :to="{
+                name: 'product.category',
+                params: { category: 'All Products' },
+              }">
         <v-btn class="button">SHOP NOW</v-btn>
       </router-link>
     </div>
