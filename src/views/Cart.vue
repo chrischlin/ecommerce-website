@@ -18,14 +18,14 @@
 
       <v-col cols="1">{{ item.price }}</v-col>
       <v-col cols="1">{{ item.quantity }}</v-col>
-      <v-col cols="1">{{ item.price }}</v-col>
+      <v-col cols="1">{{ item.price * item.quantity }}</v-col>
     </v-row>
   </v-container>
 
   <v-container class="pay-container">
     <v-row justify="end">
       <v-col cols="4" class="pay">Subtotal :</v-col>
-      <v-col cols="2" class="pay-amount">$2,000</v-col>
+      <v-col cols="2" class="pay-amount">${{ subtotal }}</v-col>
     </v-row>
 
     <v-row justify="end">
@@ -35,7 +35,7 @@
 
     <v-row justify="end">
       <v-col cols="4" class="total">Total :</v-col>
-      <v-col cols="2" class="total-amount">$2,000</v-col>
+      <v-col cols="2" class="total-amount">${{ subtotal }}</v-col>
     </v-row>
 
     <v-row justify="end" class="button">
@@ -48,9 +48,17 @@
 import { mapState } from "vuex";
 
 export default {
-  computed: mapState({
-    products: "items",
-  }),
+  computed: {
+    ...mapState({
+      products: "items",
+    }),
+
+    subtotal() {
+      return this.products.reduce((acc, item) => {
+        return acc + item.price * item.quantity;
+      }, 0);
+    },
+  },
 };
 </script>
 
