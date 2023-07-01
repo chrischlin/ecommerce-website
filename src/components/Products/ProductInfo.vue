@@ -36,7 +36,9 @@
             <div class="quantity">{{ quantity }}</div>
             <div class="plus" @click="incrementQuantity">+</div>
           </div>
-          <v-btn class="button">Add to Cart</v-btn>
+          <v-btn class="button" @click="addToCart(newItem)"
+            >Add to Cart</v-btn
+          >
         </v-card-actions>
 
         <v-card-text class="card-text">
@@ -60,6 +62,7 @@
 
 <script>
 import { products } from "../../data/data.js";
+import { mapMutations } from "vuex";
 
 export default {
   data() {
@@ -76,6 +79,7 @@ export default {
         this.quantity--;
       }
     },
+    ...mapMutations(["addToCart"]),
   },
   computed: {
     productId() {
@@ -84,6 +88,10 @@ export default {
     productDetail() {
       return products.find((product) => product.id === this.productId);
     },
+    newItem(){
+      return {...this.productDetail, quantity: this.quantity}
+    }
+
   },
 };
 </script>

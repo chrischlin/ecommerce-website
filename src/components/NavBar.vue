@@ -37,6 +37,7 @@
       <router-link to="/cart"
         ><font-awesome-icon icon="fa-solid fa-cart-shopping"
       /></router-link>
+      <div v-if="cartQuantity > 0">{{ cartQuantity }}</div>
     </div>
   </div>
 </template>
@@ -50,6 +51,7 @@ import {
   faCartShopping,
 } from "@fortawesome/free-solid-svg-icons";
 import { products } from "../data/data.js";
+import { mapGetters } from "vuex";
 
 library.add(faSearch, faUser, faCartShopping);
 
@@ -69,6 +71,10 @@ export default {
 
   components: {
     FontAwesomeIcon,
+  },
+
+  computed: {
+    ...mapGetters(["cartQuantity"]),
   },
 };
 </script>
