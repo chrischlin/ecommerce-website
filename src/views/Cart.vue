@@ -1,13 +1,13 @@
 <template>
   <div class="title">My Cart</div>
+
   <v-container class="item-container">
     <v-row class="list-title">
       <v-col> Item </v-col>
       <v-col cols="1"> Price </v-col>
-      <v-col cols="1"> Quantity </v-col>
+      <v-col cols="2"> Quantity </v-col>
       <v-col cols="1"> Total </v-col>
     </v-row>
-
     <v-row class="item-list" v-for="item in products" :key="item.name">
       <v-col>
         <v-row class="item">
@@ -15,10 +15,18 @@
           <div>{{ item.name }}</div>
         </v-row>
       </v-col>
-
       <v-col cols="1">{{ item.price }}</v-col>
-      <v-col cols="1">{{ item.quantity }}</v-col>
+      <v-col cols="2" class="quantity-control">
+        <div class="minus" @click="decrementItemQuantity(item)">-</div>
+        <div class="quantity">{{ item.quantity }}</div>
+        <div class="plus" @click="incrementItemQuantity(item)">+</div>
+      </v-col>
       <v-col cols="1">{{ item.price * item.quantity }}</v-col>
+      <font-awesome-icon
+        icon="fa-solid fa-trash"
+        class="trash"
+        @click="deleteItem(item.id)"
+      />
     </v-row>
   </v-container>
 
@@ -45,9 +53,34 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+library.add(faTrash);
+
+import { mapState, mapMutations } from "vuex";
 
 export default {
+  components: {
+    FontAwesomeIcon,
+  },
+
+  methods: {
+    incrementQuantity() {
+      this.quantity++;
+    },
+    decrementQuantity() {
+      if (this.quantity > 1) {
+        this.quantity--;
+      }
+    },
+    ...mapMutations([
+      "deleteItem",
+      "incrementItemQuantity",
+      "decrementItemQuantity",
+    ]),
+  },
+
   computed: {
     ...mapState({
       products: "items",
@@ -89,6 +122,7 @@ export default {
 }
 
 .item-list {
+  position: relative;
   align-items: center;
   margin-top: 20px;
 }
@@ -127,5 +161,36 @@ export default {
 
 .button {
   margin-top: 100px;
+}
+
+.trash {
+  position: absolute;
+  right: -50px;
+  cursor: pointer;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+}
+.quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.minus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.plus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 </style>

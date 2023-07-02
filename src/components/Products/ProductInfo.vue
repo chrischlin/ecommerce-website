@@ -36,9 +36,7 @@
             <div class="quantity">{{ quantity }}</div>
             <div class="plus" @click="incrementQuantity">+</div>
           </div>
-          <v-btn class="button" @click="addToCart(newItem)"
-            >Add to Cart</v-btn
-          >
+          <v-btn class="button" @click="addToCart(newItem)">Add to Cart</v-btn>
         </v-card-actions>
 
         <v-card-text class="card-text">
@@ -88,10 +86,9 @@ export default {
     productDetail() {
       return products.find((product) => product.id === this.productId);
     },
-    newItem(){
-      return {...this.productDetail, quantity: this.quantity}
-    }
-
+    newItem() {
+      return { ...this.productDetail, quantity: this.quantity };
+    },
   },
 };
 </script>
@@ -158,7 +155,6 @@ export default {
 .quantity {
   width: 60px;
   height: 30px;
-
   display: flex;
   align-items: center;
   justify-content: center;

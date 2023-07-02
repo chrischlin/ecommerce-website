@@ -16,6 +16,20 @@ const store = createStore({
         cartItem.quantity++;
       }
     },
+    deleteItem(state, itemId) {
+      state.items = state.items.filter((item) => item.id !== itemId);
+    },
+
+    incrementItemQuantity(state, payload) {
+      const cartItem = state.items.find((item) => item.id === payload.id);
+      cartItem.quantity++;
+    },
+    decrementItemQuantity(state, payload) {
+      const cartItem = state.items.find((item) => item.id === payload.id);
+      if (cartItem.quantity > 1) {
+        cartItem.quantity--;
+      }
+    },
   },
 
   getters: {
