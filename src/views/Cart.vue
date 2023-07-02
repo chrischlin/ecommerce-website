@@ -47,7 +47,27 @@
     </v-row>
 
     <v-row justify="end" class="button">
-      <v-btn color="black">Check Out</v-btn>
+      <v-btn
+        color="black"
+        @click="dialog = true"
+        :disabled="products.length === 0"
+        >Check Out</v-btn
+      >
+      <v-dialog v-model="dialog" width="600" class="dialog">
+        <v-card>
+          <v-card-text class="text-h5"> Missed something else? </v-card-text>
+          <v-card-actions>
+            <v-row justify="space-evenly">
+              <v-btn variant="tonal" @click="dialog = false">
+                Yes! I still want other things!
+              </v-btn>
+              <v-btn variant="tonal" @click="checkOut()">
+                No, I want to check out!
+              </v-btn>
+            </v-row>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
     </v-row>
   </v-container>
 </template>
@@ -61,6 +81,12 @@ library.add(faTrash);
 import { mapState, mapMutations } from "vuex";
 
 export default {
+  data() {
+    return {
+      dialog: false,
+    };
+  },
+
   components: {
     FontAwesomeIcon,
   },
@@ -78,7 +104,13 @@ export default {
       "deleteItem",
       "incrementItemQuantity",
       "decrementItemQuantity",
+      "removeAll",
     ]),
+
+    checkOut() {
+      this.dialog = false;
+      this.removeAll();
+    },
   },
 
   computed: {
@@ -194,5 +226,9 @@ export default {
   justify-content: center;
   cursor: pointer;
   color: grey;
+}
+
+.dialog {
+  text-align: center;
 }
 </style>

@@ -30,6 +30,9 @@ const store = createStore({
         cartItem.quantity--;
       }
     },
+    removeAll(state) {
+      state.items = [];
+    },
   },
 
   getters: {
