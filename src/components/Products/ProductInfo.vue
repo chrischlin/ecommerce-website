@@ -1,16 +1,5 @@
 <template>
   <div class="product-info">
-    <v-list nav>
-      <v-list-item>
-        <v-img
-          :width="100"
-          :height="100"
-          cover
-          :src="productDetail.imageUrl"
-        ></v-img>
-      </v-list-item>
-    </v-list>
-
     <div>
       <v-img
         class="ml-auto mr-auto mt-auto mb-auto"
@@ -142,7 +131,14 @@ export default {
   width: 120px;
 }
 
-.minus,
+.minus {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
 .plus {
   width: 30px;
   height: 30px;

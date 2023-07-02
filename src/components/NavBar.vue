@@ -31,29 +31,23 @@
       </div>
     </div>
     <router-link to="/" class="title">Lin's Collection</router-link>
-    <div class="right-part">
-      <a href=""><font-awesome-icon icon="fa-solid fa-search" /></a>
-      <a href=""><font-awesome-icon icon="fa-solid fa-user" /></a>
-      <router-link to="/cart"
-        ><font-awesome-icon icon="fa-solid fa-cart-shopping"
-      /></router-link>
-      <div v-if="cartQuantity > 0">{{ cartQuantity }}</div>
-    </div>
+    <router-link class="right-part" to="/cart">
+      <v-badge v-if="cartQuantity" :content="cartQuantity" floating>
+        <font-awesome-icon icon="fa-solid fa-cart-shopping" />
+      </v-badge>
+      <font-awesome-icon v-else icon="fa-solid fa-cart-shopping" />
+    </router-link>
   </div>
 </template>
 
 <script>
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import {
-  faSearch,
-  faUser,
-  faCartShopping,
-} from "@fortawesome/free-solid-svg-icons";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { products } from "../data/data.js";
 import { mapGetters } from "vuex";
 
-library.add(faSearch, faUser, faCartShopping);
+library.add(faCartShopping);
 
 export default {
   data() {
@@ -84,7 +78,7 @@ export default {
   display: flex;
   height: 80px;
   width: 100%;
-  padding: 20px;
+  padding: 30px;
   justify-content: space-between;
   align-items: center;
   border-bottom-style: solid;

@@ -3,7 +3,7 @@
 
   <v-container class="item-container">
     <v-row class="list-title">
-      <v-col> Item </v-col>
+      <v-col class="title-left"> Item </v-col>
       <v-col cols="1"> Price </v-col>
       <v-col cols="2"> Quantity </v-col>
       <v-col cols="1"> Total </v-col>
@@ -17,9 +17,9 @@
       </v-col>
       <v-col cols="1">{{ item.price }}</v-col>
       <v-col cols="2" class="quantity-control">
-        <div class="minus" @click="decrementItemQuantity(item)">-</div>
+        <div class="counter" @click="decrementItemQuantity(item)">-</div>
         <div class="quantity">{{ item.quantity }}</div>
-        <div class="plus" @click="incrementItemQuantity(item)">+</div>
+        <div class="counter" @click="incrementItemQuantity(item)">+</div>
       </v-col>
       <v-col cols="1">{{ item.price * item.quantity }}</v-col>
       <font-awesome-icon
@@ -108,8 +108,11 @@ export default {
   font-weight: bold;
   border-bottom: solid;
   border-color: #e5dcd2;
+  text-align: center;
 }
-
+.title-left {
+  text-align: left;
+}
 .item {
   align-items: center;
   gap: 20px;
@@ -125,6 +128,7 @@ export default {
   position: relative;
   align-items: center;
   margin-top: 20px;
+  text-align: center;
 }
 
 .item-container {
@@ -167,13 +171,16 @@ export default {
   position: absolute;
   right: -50px;
   cursor: pointer;
+  color: lightgray;
+}
+.trash:hover {
+  color: black;
 }
 
 .quantity-control {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  border: 1px solid #ccc;
+  justify-content: space-evenly;
 }
 .quantity {
   display: flex;
@@ -181,16 +188,11 @@ export default {
   justify-content: center;
 }
 
-.minus {
+.counter {
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-}
-.plus {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+  color: grey;
 }
 </style>
