@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import { products } from "../../data/data.js";
+import products from "../../data/data";
 import { mapMutations } from "vuex";
 
 export default {

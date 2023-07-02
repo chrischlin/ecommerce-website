@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import { products } from "../../data/data.js";
+import products from "../../data/data";
 
 export default {
   data() {

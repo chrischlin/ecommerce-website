@@ -44,7 +44,7 @@
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
-import { products } from "../data/data.js";
+import products from "../data/data";
 import { mapGetters } from "vuex";
 
 library.add(faCartShopping);

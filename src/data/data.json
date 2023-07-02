@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "category": "Necklaces",
+    "name": "Goldec Cavalier Necklace",
+    "imageUrl": "/images/products/necklaces1.jpeg",
+    "price": 650,
+    "description": "Embrace celestial motifs with the Goldec Cavalier Necklace. Crafted with cut-out details representing the night sky, this 14K gold gilt statement piece adds an enchanting touch to your holiday style."
+  },
+  {
+    "id": 2,
+    "category": "Necklaces",
+    "name": "Golden Hours Necklaces",
+    "imageUrl": "/images/products/necklaces2.jpeg",
+    "price": 850,
+    "description": "Experience effortless elegance with the Golden Hours Necklaces. These sleek 14K gold vermeil stud earrings feature a bestselling motif, adding a radiant touch to your everyday look."
+  },
+  {
+    "id": 3,
+    "category": "Necklaces",
+    "name": "Three-Stran Pearl Necklace",
+    "imageUrl": "/images/products/necklaces3.jpeg",
+    "price": 1500,
+    "description": "Indulge in the allure of pearls with the Three-Strand Pearl Necklace. This exquisite piece elevates your style with its lustrous pearls, offering a sophisticated touch to any ensemble."
+  },
+  {
+    "id": 4,
+    "category": "Earrings",
+    "name": "Pearl Tear Earring",
+    "imageUrl": "/images/products/earrings1.jpeg",
+    "price": 600,
+    "description": "Enhance your elegance with the Pearl Tear Earring. These exquisite earrings feature glistening pearls that gracefully dangle, capturing attention with their timeless beauty."
+  },
+  {
+    "id": 5,
+    "category": "Earrings",
+    "name": "Sunshine Pearl Earring",
+    "imageUrl": "/images/products/earrings2.jpeg",
+    "price": 550,
+    "description": "Radiate with the Sunshine Pearl Earring. These exquisite stud earrings feature luminous pearls that illuminate your look, infusing it with a touch of natural warmth and grace."
+  },
+  {
+    "id": 6,
+    "category": "Earrings",
+    "name": "Golden Hoop Earring",
+    "imageUrl": "/images/products/earrings3.jpeg",
+    "price": 450,
+    "description": "Step into timeless style with the Golden Hoop Earring. These graceful earrings encircle your ear with polished gold, adding a touch of celestial radiance to elevate any outfit."
+  },
+  {
+    "id": 7,
+    "category": "Rings",
+    "name": "Geometry Rings",
+    "imageUrl": "/images/products/rings1.jpeg",
+    "price": 550,
+    "description": "Discover harmony and elegance with the Geometry Rings. These contemporary rings showcase unique arrangements of lines and angles, symbolizing balance and symmetry with a captivating contrast of metallic tones and sparkling gemstones."
+  },
+  {
+    "id": 8,
+    "category": "Rings",
+    "name": "Water Drops Rings",
+    "imageUrl": "/images/products/rings2.jpeg",
+    "price": 450,
+    "description": "Immerse yourself in the beauty of Water Drops Rings. Inspired by cascading water, these rings captivate with delicate curves and shimmering gemstones, evoking a sense of tranquility and elegance."
+  },
+  {
+    "id": 9,
+    "category": "Rings",
+    "name": "Coral Rings",
+    "imageUrl": "/images/products/rings3.jpeg",
+    "price": 450,
+    "description": "Dive into underwater enchantment with Coral Rings. Inspired by the delicate coral reefs, these rings feature intricate textures and vibrant gemstones, adding a touch of exotic allure to your style."
+  },
+  {
+    "id": 10,
+    "category": "Bracelets",
+    "name": "Gold Chain Bracelet",
+    "imageUrl": "/images/products/bracelets1.jpeg",
+    "price": 600,
+    "description": "Wrap your wrist in elegance with the Gold Chain Bracelet. Crafted with a sleek and versatile design, this bracelet adds a touch of sophistication and timeless appeal to any ensemble."
+  },
+  {
+    "id": 11,
+    "category": "Bracelets",
+    "name": "Faith Bracelet",
+    "imageUrl": "/images/products/bracelets2.jpeg",
+    "price": 500,
+    "description": "Embrace the power of faith with the Faith Bracelet. This delicate piece symbolizes strength and unity, featuring an intertwined design that radiates a sense of inner peace and contemporary elegance."
+  },
+  {
+    "id": 12,
+    "category": "Bracelets",
+    "name": "Quotes Silver Bracelet",
+    "imageUrl": "/images/products/bracelets3.jpeg",
+    "price": 600,
+    "description": "Express your unique personality with the Quotes Silver Bracelet. Each delicately engraved quote represents a cherished sentiment or an inspiring message, adding an elegant and meaningful touch to your style."
+  }
+]
