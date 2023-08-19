@@ -1,13 +1,8 @@
 <template>
   <div class="products-block">
     <div v-for="product in categories" :key="product.name">
-      <router-link
-        :to="{ name: 'product.category', params: { category: product.name } }"
-      >
-        <div
-          class="product"
-          :style="{ backgroundImage: 'url(' + product.imageUrl + ')' }"
-        >
+      <router-link :to="{ name: 'product.category', params: { category: product.name } }">
+        <div class="product" :style="{ backgroundImage: 'url(' + product.imageUrl + ')' }">
           {{ product.name }}
         </div>
       </router-link>
@@ -25,22 +20,22 @@ export default {
       categories: [
         {
           name: "Necklaces",
-          imageUrl: "images/categories/necklaces.jpeg",
+          imageUrl: "/images/categories/necklaces.jpeg",
         },
 
         {
           name: "Earrings",
-          imageUrl: "images/categories/earrings.jpeg",
+          imageUrl: "/images/categories/earrings.jpeg",
         },
 
         {
           name: "Rings",
-          imageUrl: "images/categories/rings.jpeg",
+          imageUrl: "/images/categories/rings.jpeg",
         },
 
         {
           name: "Bracelets",
-          imageUrl: "images/categories/bracelets.jpeg",
+          imageUrl: "/images/categories/bracelets.jpeg",
         },
       ],
     };

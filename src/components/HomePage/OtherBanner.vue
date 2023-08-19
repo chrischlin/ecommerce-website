@@ -4,12 +4,10 @@
       <div class="collection-pearl">Collection Pearl</div>
       <div class="content">Elegance is Effortless.</div>
       <div class="button-container">
-        <router-link
-          :to="{
-            name: 'product.category',
-            params: { category: 'All Products' },
-          }"
-        >
+        <router-link :to="{
+          name: 'product.category',
+          params: { category: 'All Products' },
+        }">
           <v-btn class="button">SHOP NOW</v-btn>
         </router-link>
       </div>
@@ -22,7 +20,7 @@
 <style scoped>
 .banner {
   height: 600px;
-  background-image: url("images/banners/banner5.jpeg");
+  background-image: url("/images/banners/banner5.jpeg");
   background-size: cover;
   background-position: center;
 }
@@ -35,6 +33,7 @@
   justify-content: center;
   margin: 30px;
 }
+
 .collection-pearl {
   color: white;
   font-size: 50px;
@@ -45,11 +44,13 @@
   font-size: 20px;
   font-family: "Roboto";
 }
+
 .button-container {
   display: flex;
   justify-content: center;
   margin-top: 50px;
 }
+
 .button {
   height: 48px;
   width: 150px;

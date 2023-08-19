@@ -58,7 +58,7 @@ export default {
   justify-content: center;
   align-items: center;
   height: 400px;
-  background-image: url("images/banners/banner3.jpeg");
+  background-image: url("/images/banners/banner3.jpeg");
   background-size: cover;
   background-position: center;
   font-size: 40px;
