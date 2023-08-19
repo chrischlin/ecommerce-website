@@ -1,14 +1,10 @@
 # ecommerce-website
 
-This template should help get you started developing with Vue 3 in Vite.
 
-## Recommended IDE Setup
+<img width="750" alt="ecommerce1" src="https://github.com/chrischlin/ecommerce-website/assets/124772257/e50a9ea4-fba1-4db6-b036-921088e51112">
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Live on: https://main--transcendent-shortbread-e165f4.netlify.app/
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Project Setup
 
