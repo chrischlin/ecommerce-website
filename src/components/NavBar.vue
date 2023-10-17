@@ -6,32 +6,26 @@
       <div class="text-center">
         <v-menu open-on-hover>
           <template v-slot:activator="{ props }">
-            <router-link
-              :to="{
-                name: 'product.category',
-                params: { category: 'All Products' },
-              }"
-              v-bind="props"
-            >
+            <router-link :to="{
+              name: 'product.category',
+              params: { category: 'All Products' },
+            }" v-bind="props">
               Products
             </router-link>
           </template>
           <v-list>
             <v-list-item v-for="(item, index) in items" :key="index">
-              <router-link
-                :to="{
-                  name: 'product.category',
-                  params: { category: item.title },
-                }"
-                >{{ item.title }}</router-link
-              >
+              <router-link :to="{
+                name: 'product.category',
+                params: { category: item.title },
+              }">{{ item.title }}</router-link>
             </v-list-item>
           </v-list>
         </v-menu>
       </div>
     </div>
     <router-link to="/" class="title">Lin's Collection</router-link>
-    <router-link class="right-part" to="/cart">
+    <router-link class="right-part" :to="cartQuantity ? '/cart' : ''">
       <v-badge v-if="cartQuantity" :content="cartQuantity" floating>
         <font-awesome-icon icon="fa-solid fa-cart-shopping" />
       </v-badge>
