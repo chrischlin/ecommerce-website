@@ -22,11 +22,7 @@
         <div class="counter" @click="incrementItemQuantity(item)">+</div>
       </v-col>
       <v-col cols="1">{{ item.price * item.quantity }}</v-col>
-      <font-awesome-icon
-        icon="fa-solid fa-trash"
-        class="trash"
-        @click="deleteItem(item.id)"
-      />
+      <font-awesome-icon icon="fa-solid fa-trash" class="trash" @click="deleteItem(item.id)" />
     </v-row>
   </v-container>
 
@@ -47,12 +43,7 @@
     </v-row>
 
     <v-row justify="end" class="button">
-      <v-btn
-        color="black"
-        @click="dialog = true"
-        :disabled="products.length === 0"
-        >Check Out</v-btn
-      >
+      <v-btn color="black" @click="dialog = true" :disabled="products.length === 0">Check Out</v-btn>
       <v-dialog v-model="dialog" width="600" class="dialog">
         <v-card>
           <v-card-text class="text-h5"> Missed something else? </v-card-text>
@@ -62,7 +53,7 @@
                 Yes! I still want other things!
               </v-btn>
               <v-btn variant="tonal" @click="checkOut()">
-                No, I want to check out!
+                <router-link to="/payment">No, I want to check out!</router-link>
               </v-btn>
             </v-row>
           </v-card-actions>
@@ -142,9 +133,11 @@ export default {
   border-color: #e5dcd2;
   text-align: center;
 }
+
 .title-left {
   text-align: left;
 }
+
 .item {
   align-items: center;
   gap: 20px;
@@ -180,6 +173,7 @@ export default {
   border-color: #e5dcd2;
   font-weight: bold;
 }
+
 .pay-amount {
   text-align: end;
   border-bottom: solid;
@@ -189,6 +183,7 @@ export default {
 .total {
   font-weight: bold;
 }
+
 .total-amount {
   text-align: end;
   font-size: x-large;
@@ -205,6 +200,7 @@ export default {
   cursor: pointer;
   color: lightgray;
 }
+
 .trash:hover {
   color: black;
 }
@@ -214,6 +210,7 @@ export default {
   align-items: center;
   justify-content: space-evenly;
 }
+
 .quantity {
   display: flex;
   align-items: center;

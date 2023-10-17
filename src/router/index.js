@@ -5,6 +5,7 @@ import Products from "../views/Products.vue";
 import ProductInfo from "../components/Products/ProductInfo.vue";
 import AllProducts from "../components/Products/AllProducts.vue";
 import Cart from "../views/Cart.vue";
+import Payment from "../views/Payment.vue";
 
 const routes = [
   {
@@ -36,6 +37,11 @@ const routes = [
     path: "/cart",
     name: "cart",
     component: Cart,
+  },
+  {
+    path: "/payment",
+    name: "payment",
+    component: Payment,
   },
 ];
 
