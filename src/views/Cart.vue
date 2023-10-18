@@ -1,66 +1,65 @@
 <template>
   <div class="title">My Cart</div>
+  <div v-if="products.length > 0">
+    <v-container class="item-container">
+      <v-row class="list-title">
+        <v-col class="title-left"> Item </v-col>
+        <v-col cols="1"> Price </v-col>
+        <v-col cols="2"> Quantity </v-col>
+        <v-col cols="1"> Total </v-col>
+      </v-row>
+      <v-row class="item-list" v-for="item in products" :key="item.name">
+        <v-col>
+          <v-row class="item">
+            <img class="image" :src="item.imageUrl" />
+            <div>{{ item.name }}</div>
+          </v-row>
+        </v-col>
+        <v-col cols="1">{{ item.price }}</v-col>
+        <v-col cols="2" class="quantity-control">
+          <div class="counter" @click="decrementItemQuantity(item)">-</div>
+          <div class="quantity">{{ item.quantity }}</div>
+          <div class="counter" @click="incrementItemQuantity(item)">+</div>
+        </v-col>
+        <v-col cols="1">{{ item.price * item.quantity }}</v-col>
+        <font-awesome-icon icon="fa-solid fa-trash" class="trash" @click="deleteItem(item.id)" />
+      </v-row>
+    </v-container>
 
-  <v-container class="item-container">
-    <v-row class="list-title">
-      <v-col class="title-left"> Item </v-col>
-      <v-col cols="1"> Price </v-col>
-      <v-col cols="2"> Quantity </v-col>
-      <v-col cols="1"> Total </v-col>
-    </v-row>
-    <v-row class="item-list" v-for="item in products" :key="item.name">
-      <v-col>
-        <v-row class="item">
-          <img class="image" :src="item.imageUrl" />
-          <div>{{ item.name }}</div>
-        </v-row>
-      </v-col>
-      <v-col cols="1">{{ item.price }}</v-col>
-      <v-col cols="2" class="quantity-control">
-        <div class="counter" @click="decrementItemQuantity(item)">-</div>
-        <div class="quantity">{{ item.quantity }}</div>
-        <div class="counter" @click="incrementItemQuantity(item)">+</div>
-      </v-col>
-      <v-col cols="1">{{ item.price * item.quantity }}</v-col>
-      <font-awesome-icon icon="fa-solid fa-trash" class="trash" @click="deleteItem(item.id)" />
-    </v-row>
-  </v-container>
+    <v-container class="pay-container">
+      <v-row justify="end">
+        <v-col cols="4" class="pay">Subtotal :</v-col>
+        <v-col cols="2" class="pay-amount">${{ subtotal }}</v-col>
+      </v-row>
 
-  <v-container class="pay-container">
-    <v-row justify="end">
-      <v-col cols="4" class="pay">Subtotal :</v-col>
-      <v-col cols="2" class="pay-amount">${{ subtotal }}</v-col>
-    </v-row>
+      <v-row justify="end">
+        <v-col cols="4" class="pay">Shipping :</v-col>
+        <v-col cols="2" class="pay-amount">Free</v-col>
+      </v-row>
 
-    <v-row justify="end">
-      <v-col cols="4" class="pay">Shipping :</v-col>
-      <v-col cols="2" class="pay-amount">Free</v-col>
-    </v-row>
+      <v-row justify="end">
+        <v-col cols="4" class="total">Total :</v-col>
+        <v-col cols="2" class="total-amount">${{ subtotal }}</v-col>
+      </v-row>
 
-    <v-row justify="end">
-      <v-col cols="4" class="total">Total :</v-col>
-      <v-col cols="2" class="total-amount">${{ subtotal }}</v-col>
-    </v-row>
-
-    <v-row justify="end" class="button">
-      <v-btn color="black" @click="dialog = true" :disabled="products.length === 0">Check Out</v-btn>
-      <v-dialog v-model="dialog" width="600" class="dialog">
-        <v-card>
-          <v-card-text class="text-h5"> Missed something else? </v-card-text>
-          <v-card-actions>
-            <v-row justify="space-evenly">
-              <v-btn variant="tonal" @click="dialog = false">
-                Yes! I still want other things!
-              </v-btn>
-              <v-btn variant="tonal" @click="checkOut()">
-                <router-link to="/payment">No, I want to check out!</router-link>
-              </v-btn>
-            </v-row>
-          </v-card-actions>
-        </v-card>
-      </v-dialog>
-    </v-row>
-  </v-container>
+      <v-row justify="end" class="checkout-button">
+        <router-link to="/payment">
+          <v-btn color="black" :disabled="products.length === 0">Check Out</v-btn>
+        </router-link>
+      </v-row>
+    </v-container>
+  </div>
+  <div v-else class="empty">
+    Your shopping cart is currently empty.
+    <div class="button-container">
+      <router-link :to="{
+        name: 'product.category',
+        params: { category: 'All Products' },
+      }">
+        <v-btn class="shopnow-button">SHOP NOW</v-btn>
+      </router-link>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -72,11 +71,6 @@ library.add(faTrash);
 import { mapState, mapMutations } from "vuex";
 
 export default {
-  data() {
-    return {
-      dialog: false,
-    };
-  },
 
   components: {
     FontAwesomeIcon,
@@ -95,13 +89,7 @@ export default {
       "deleteItem",
       "incrementItemQuantity",
       "decrementItemQuantity",
-      "removeAll",
     ]),
-
-    checkOut() {
-      this.dialog = false;
-      this.removeAll();
-    },
   },
 
   computed: {
@@ -190,7 +178,7 @@ export default {
   font-weight: bold;
 }
 
-.button {
+.checkout-button {
   margin-top: 100px;
 }
 
@@ -225,7 +213,23 @@ export default {
   color: grey;
 }
 
-.dialog {
+.empty {
   text-align: center;
+  margin-bottom: 200px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.shopnow-button {
+  height: 48px;
+  width: 150px;
+  background-color: #444444;
+  color: white;
+  letter-spacing: 1.5px;
+  margin-top: 50px;
 }
 </style>

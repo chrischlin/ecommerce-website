@@ -25,7 +25,7 @@
       </div>
     </div>
     <router-link to="/" class="title">Lin's Collection</router-link>
-    <router-link class="right-part" :to="cartQuantity ? '/cart' : ''">
+    <router-link class="right-part" to="/cart">
       <v-badge v-if="cartQuantity" :content="cartQuantity" floating color="#d16f02">
         <font-awesome-icon icon="fa-solid fa-cart-shopping" />
       </v-badge>
