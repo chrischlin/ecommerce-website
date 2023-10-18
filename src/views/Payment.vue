@@ -29,12 +29,12 @@ export default {
 }
 
 .info {
-    width: 70%;
+    width: 65%;
     border: solid black;
 }
 
 .summary {
-    width: 30%;
+    width: 35%;
     border: solid black;
 }
 </style>
