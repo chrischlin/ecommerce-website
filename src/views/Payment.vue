@@ -1,12 +1,14 @@
 <template>
-    <div class="page">
-        <div class="info">
-            <Shipping />
-        </div>
-        <div class="summary">
-            <Summary />
-        </div>
-    </div>
+    <v-container class="page">
+        <v-row>
+            <v-col cols="8" class="info">
+                <Shipping />
+            </v-col>
+            <v-col cols="4" class="summary">
+                <Summary />
+            </v-col>
+        </v-row>
+    </v-container>
 </template>
 
 <script>
@@ -22,19 +24,10 @@ export default {
 
 <style scoped>
 .page {
-    display: flex;
-    justify-content: space-between;
     margin-top: 100px;
-    width: 100%
 }
 
-.info {
-    width: 65%;
-    border: solid black;
-}
+.info {}
 
-.summary {
-    width: 35%;
-    border: solid black;
-}
+.summary {}
 </style>
