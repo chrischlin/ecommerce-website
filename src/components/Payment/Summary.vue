@@ -29,7 +29,7 @@
                 <v-col>
                     <div class="item-title">{{ item.name }}</div>
                     <div class="item-content">x{{ item.quantity }}</div>
-                    <div class="item-content">${{ item.price }}</div>
+                    <div class="item-content">${{ item.price * item.quantity }}</div>
                 </v-col>
             </v-row>
         </v-container>
