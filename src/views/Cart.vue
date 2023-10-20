@@ -43,7 +43,7 @@
       </v-row>
 
       <v-row justify="end" class="checkout-button">
-        <router-link to="/payment">
+        <router-link to="/shipping">
           <v-btn color="black" :disabled="products.length === 0">Check Out</v-btn>
         </router-link>
       </v-row>
@@ -117,7 +117,7 @@ export default {
 
 .list-title {
   font-weight: bold;
-  border-bottom: solid;
+  border-bottom: 0.8px solid;
   border-color: #e5dcd2;
   text-align: center;
 }
@@ -146,7 +146,7 @@ export default {
 
 .item-container {
   width: 60%;
-  border-bottom: solid;
+  border-bottom: 0.8px solid;
   border-color: #e5dcd2;
 }
 
@@ -157,14 +157,14 @@ export default {
 }
 
 .pay {
-  border-bottom: solid;
+  border-bottom: 0.8px solid;
   border-color: #e5dcd2;
   font-weight: bold;
 }
 
 .pay-amount {
   text-align: end;
-  border-bottom: solid;
+  border-bottom: 0.8px solid;
   border-color: #e5dcd2;
 }
 

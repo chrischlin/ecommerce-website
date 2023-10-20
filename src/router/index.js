@@ -5,7 +5,9 @@ import Products from "../views/Products.vue";
 import ProductInfo from "../components/Products/ProductInfo.vue";
 import AllProducts from "../components/Products/AllProducts.vue";
 import Cart from "../views/Cart.vue";
+import Shipping from "../views/Shipping.vue";
 import Payment from "../views/Payment.vue";
+import Confirmation from "../views/Confirmation.vue"
 
 const routes = [
   {
@@ -39,9 +41,19 @@ const routes = [
     component: Cart,
   },
   {
+    path: "/shipping",
+    name: "shipping",
+    component: Shipping,
+  },
+  {
     path: "/payment",
     name: "payment",
     component: Payment,
+  },
+  {
+    path: "/confirmation",
+    name: "confirmation",
+    component: Confirmation,
   },
 ];
 

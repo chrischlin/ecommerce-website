@@ -63,7 +63,7 @@
                 </v-col>
             </v-row>
             <v-row justify="end" class="next-button">
-                <v-btn color="black">Next</v-btn>
+                <router-link to="/payment"><v-btn color="black">Next</v-btn></router-link>
             </v-row>
         </v-container>
     </v-form>

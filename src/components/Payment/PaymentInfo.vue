@@ -58,7 +58,7 @@
     </v-form>
     <v-container>
         <v-row justify="end" class="next-button">
-            <v-btn color="black">Next</v-btn>
+            <router-link to="/confirmation"><v-btn color="black">Next</v-btn></router-link>
         </v-row>
     </v-container>
 </template>
