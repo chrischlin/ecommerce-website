@@ -45,7 +45,7 @@
             <v-row></v-row>
         </v-container>
     </v-form>
-    <v-form class="container">
+    <v-form>
         <v-container>
             <div class="subtitle">Address</div>
             <v-row>
@@ -62,11 +62,13 @@
                         variant="underlined"></v-text-field>
                 </v-col>
             </v-row>
-            <v-row justify="end" class="next-button">
-                <router-link to="/payment"><v-btn color="black">Next</v-btn></router-link>
-            </v-row>
+
+
         </v-container>
     </v-form>
+    <v-row justify="center" class="next-button">
+        <router-link to="/payment"><v-btn color="black">Next</v-btn></router-link>
+    </v-row>
 </template>
 
 <script>
@@ -136,11 +138,9 @@ export default {
     margin-bottom: 20px;
 }
 
-.container {
-    margin-bottom: 100px;
-}
 
 .next-button {
     margin-top: 80px;
+    margin-bottom: 100px;
 }
 </style>

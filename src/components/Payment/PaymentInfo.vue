@@ -57,7 +57,7 @@
         </v-container>
     </v-form>
     <v-container>
-        <v-row justify="end" class="next-button">
+        <v-row justify="center" class="next-button">
             <router-link to="/confirmation"><v-btn color="black">Next</v-btn></router-link>
         </v-row>
     </v-container>
@@ -175,7 +175,12 @@ export default {
     margin-right: 50px;
 }
 
+.credit-card {
+    width: 50%;
+}
+
 .next-button {
     margin-top: 80px;
+    margin-bottom: 100px;
 }
 </style>
