@@ -1,10 +1,10 @@
 <template>
     <v-container class="page">
         <v-row>
-            <v-col cols="8" class="info">
-                <Shipping />
+            <v-col cols="8">
+                <PaymentInfo />
             </v-col>
-            <v-col cols="4" class="summary">
+            <v-col cols="4">
                 <Summary />
             </v-col>
         </v-row>
@@ -12,12 +12,13 @@
 </template>
 
 <script>
-import Shipping from "../components/Payment/Shipping.vue"
-import Summary from "../components/Payment/Summary.vue"
+import Shipping from "../components/Payment/Shipping.vue";
+import PaymentInfo from "../components/Payment/PaymentInfo.vue";
+import Summary from "../components/Payment/Summary.vue";
 
 
 export default {
-    components: { Shipping, Summary },
+    components: { Shipping, PaymentInfo, Summary },
 }
 
 </script>
@@ -26,8 +27,4 @@ export default {
 .page {
     margin-top: 100px;
 }
-
-.info {}
-
-.summary {}
 </style>
