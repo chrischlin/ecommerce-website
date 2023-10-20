@@ -1,6 +1,6 @@
 <template>
     <div class="progress">
-        <v-timeline direction="horizontal" side="end">
+        <v-timeline direction="horizontal" side="end" truncate-line="both">
             <v-timeline-item size="x-small">
                 <div class="text-h7">Cart</div>
             </v-timeline-item>
@@ -18,7 +18,12 @@
             </v-timeline-item>
         </v-timeline>
     </div>
-    <div class="title">SHIPPING</div>
+    <v-container>
+        <v-row>
+            <v-col class="title">SHIPPING</v-col>
+        </v-row>
+    </v-container>
+
     <v-form @submit.prevent>
         <v-container>
             <div class="subtitle">Contact</div>
@@ -110,8 +115,8 @@ export default {
 
 <style scoped>
 .progress {
-    margin: 10px;
     margin-bottom: 50px;
+    width: 50%;
 }
 
 .text-color-grey {
