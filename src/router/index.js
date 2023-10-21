@@ -7,7 +7,8 @@ import AllProducts from "../components/Products/AllProducts.vue";
 import Cart from "../views/Cart.vue";
 import Shipping from "../views/Shipping.vue";
 import Payment from "../views/Payment.vue";
-import Confirmation from "../views/Confirmation.vue"
+import Confirmation from "../views/Confirmation.vue";
+import ThankYou from "../views/ThankYou.vue"
 
 const routes = [
   {
@@ -55,6 +56,11 @@ const routes = [
     name: "confirmation",
     component: Confirmation,
   },
+  {
+    path: "/completed",
+    name: "completed",
+    component: ThankYou,
+  }
 ];
 
 const router = createRouter({

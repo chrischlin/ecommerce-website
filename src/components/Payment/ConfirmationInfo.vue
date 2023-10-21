@@ -57,7 +57,7 @@
 
     <v-container>
         <v-row justify="center" class="place-button">
-            <router-link to="/"><v-btn color="black" @click="removeAll()">Place Order</v-btn></router-link>
+            <router-link to="/completed"><v-btn color="black" @click="removeAll()">Place Order</v-btn></router-link>
         </v-row>
     </v-container>
 </template>
