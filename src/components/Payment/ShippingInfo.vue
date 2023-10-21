@@ -109,9 +109,61 @@ export default {
                     return 'E-mail must be valid.';
                 },
             ],
-            cityItems: ['Taipei City', 'New Taipei City'],
+            cityItems: ['Taipei City'],
             selectedCity: '',
-            districtItems: ['Wenshan District', 'Neihu District'],
+            districtItems: [
+                'Wanhua District',
+                'Datong District',
+                'Zhongzheng District',
+                'Zhongshan District',
+                'Songshan District',
+                'Daan District',
+                'Xinyi District',
+                'Nangang District',
+                'Neihu District',
+                'Shilin District',
+                'Beitou District',
+                'Wenshan District'
+            ],
+
+            // NewTaipeiCity: [
+            //     "Banqiao District",
+            //     "Sanchong District",
+            //     "Zhonghe District",
+            //     "Yonghe District",
+            //     "Xinzhuang District",
+            //     "Tucheng District",
+            //     "Shulin District",
+            //     "Sanxia District",
+            //     "Yingge District",
+            //     "Sanchong District",
+            //     "Xindian District",
+            //     "Pinglin District",
+            //     "Wulai District",
+            //     "Yongkang District",
+            //     "Shenkeng District",
+            //     "Shiding District",
+            //     "Ruinan District",
+            //     "Gongliao District",
+            //     "Jinshan District",
+            //     "Wanli District",
+            //     "Xizhi District",
+            //     "Ruifang District",
+            //     "Pingxi District",
+            //     "Shuangxi District",
+            //     "Gufen District",
+            //     "Taishan District",
+            //     "Luzhou District",
+            //     "Wugu District",
+            //     "Bali District",
+            //     "Tamsui District",
+            //     "Sanzhi District",
+            //     "Shimen District",
+            //     "Jinshan District",
+            //     "Wanli District",
+            //     "Gongliao District",
+            // ],
+
             selectedDistrict: '',
             address: '',
             addressRules: [
@@ -122,7 +174,6 @@ export default {
             ],
         }
     },
-
 
     methods: {
         ...mapMutations([
@@ -135,6 +186,7 @@ export default {
         ]),
     }
 }
+
 </script>
 
 <style scoped>

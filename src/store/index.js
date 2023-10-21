@@ -65,6 +65,7 @@ const store = createStore({
         city: '',
         district: '',
         address: '',};
+      state.paymentMethod = '';
     },
 
     setCheckOutAmount(state, [sub,total]){
