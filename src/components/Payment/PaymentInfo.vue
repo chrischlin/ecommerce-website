@@ -65,7 +65,8 @@
 
 <script>
 export default {
-    data: () => ({
+    data() {
+     return{
         name: '',
         nameRules: [
             value => {
@@ -102,7 +103,8 @@ export default {
             },
         ],
         selectedPaymentMethod: ['Credit Card', 'PayPal'],
-    }),
+     }
+    },
     methods: {
         formatCardNumber() {
             // Remove any non-numeric characters (non-digits)

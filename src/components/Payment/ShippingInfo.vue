@@ -30,16 +30,17 @@
             <v-row>
                 <v-col>
                     <v-text-field v-model="fullName" :rules="nameRules" label="Full name" variant="underlined"
-                        label-color="blue"></v-text-field>
+                        @input="setFullName(fullName)"></v-text-field>
                 </v-col>
                 <v-col>
-                    <v-text-field v-model="phoneNumber" :rules="phoneRules" label="Phone number"
-                        variant="underlined"></v-text-field>
+                    <v-text-field v-model="phoneNumber" :rules="phoneRules" label="Phone number" variant="underlined"
+                        @input="setPhoneNumber(phoneNumber)"></v-text-field>
                 </v-col>
             </v-row>
             <v-row>
                 <v-col>
-                    <v-text-field v-model="email" :rules="emailRules" label="E-mail" variant="underlined"></v-text-field>
+                    <v-text-field v-model="email" :rules="emailRules" label="E-mail" variant="underlined"
+                        @input="setEmail(email)"></v-text-field>
                 </v-col>
             </v-row>
             <v-row></v-row>
@@ -50,16 +51,17 @@
             <div class="subtitle">Address</div>
             <v-row>
                 <v-col>
-                    <v-select :items="city" label="City" variant="underlined"></v-select>
+                    <v-select :items="city" label="City" variant="underlined" @input="setCity(city)"></v-select>
                 </v-col>
                 <v-col>
-                    <v-select :items="district" label="District" variant="underlined"></v-select>
+                    <v-select :items="district" label="District" variant="underlined"
+                        @input="setDistrict(district)"></v-select>
                 </v-col>
             </v-row>
             <v-row>
                 <v-col>
                     <v-text-field v-model="address" :rules="addressRules" label="Address (Rd.,Aly.,No.,Floor, etc)"
-                        variant="underlined"></v-text-field>
+                        variant="underlined" @input="setAddress(address)"></v-text-field>
                 </v-col>
             </v-row>
 
@@ -67,51 +69,68 @@
         </v-container>
     </v-form>
     <v-row justify="center" class="next-button">
-        <router-link to="/payment"><v-btn color="black">Next</v-btn></router-link>
+        <router-link to="/payment">
+            <v-btn color="black">Next</v-btn>
+        </router-link>
     </v-row>
 </template>
 
 <script>
+import { mapState, mapMutations } from "vuex";
+
 export default {
-    data: () => ({
-        fullName: '',
-        nameRules: [
-            value => {
-                if (value) return true;
-                return 'Full name is required';
-            },
-        ],
-        phoneNumber: '',
-        phoneRules: [
-            value => {
-                if (value) {
-                    if (/^\d+$/.test(value)) return true;
-                    return 'Phone number must contain only numbers.';
-                }
-                return 'Phone number is required.';
-            },
-        ],
-        email: '',
-        emailRules: [
-            value => {
-                if (value) return true;
-                return 'E-mail is requred.';
-            },
-            value => {
-                if (/.+@.+\..+/.test(value)) return true;
-                return 'E-mail must be valid.';
-            },
-        ],
-        city: ['Taipei City', 'New Taipei City'],
-        district: ['Wenshan District', 'Neihu District'],
-        address: '',
-        addressRules: [
-            value => {
-                if (value) return true;
-                return 'Address is required';
-            },
-        ],
-    }),
+    data() {
+        return {
+            fullName: '',
+            nameRules: [
+                value => {
+                    if (value) return true;
+                    return 'Full name is required';
+                },
+            ],
+            phoneNumber: '',
+            phoneRules: [
+                value => {
+                    if (value) {
+                        if (/^\d+$/.test(value)) return true;
+                        return 'Phone number must contain only numbers.';
+                    }
+                    return 'Phone number is required.';
+                },
+            ],
+            email: '',
+            emailRules: [
+                value => {
+                    if (value) return true;
+                    return 'E-mail is requred.';
+                },
+                value => {
+                    if (/.+@.+\..+/.test(value)) return true;
+                    return 'E-mail must be valid.';
+                },
+            ],
+            city: ['Taipei City', 'New Taipei City'],
+            district: ['Wenshan District', 'Neihu District'],
+            address: '',
+            addressRules: [
+                value => {
+                    if (value) return true;
+                    return 'Address is required';
+                },
+            ],
+        }
+    },
+
+    methods: {
+        ...mapMutations([
+            "setFullName",
+            "setPhoneNumber",
+            "setEmail",
+            "setCity",
+            "setDistrict",
+            "setAddress",
+        ])
+    }
 }
 </script>
 

@@ -29,15 +29,17 @@
         <v-row class="flex-column info" no-gutters>
             <div class="subtitle">Contact</div>
             <div class="line"></div>
-            <v-col>Name:</v-col>
-            <v-col>Phone number:</v-col>
-            <v-col>E-mail:</v-col>
+            <v-col>Name: {{ shippingInfo.fullName }}</v-col>
+            <v-col>Phone number: {{ shippingInfo.phoneNumber }}</v-col>
+            <v-col>E-mail: {{ shippingInfo.email }}</v-col>
 
         </v-row>
         <v-row class="flex-column info" no-gutters>
             <div class="subtitle">Shipping</div>
             <div class="line"></div>
-            <v-col>Address:</v-col>
+            <v-col>City:</v-col>
+            <v-col>District:</v-col>
+            <v-col>Address: {{ shippingInfo.address }}</v-col>
             <v-col>Fees: Free</v-col>
         </v-row>
         <v-row class="flex-column info" no-gutters>
@@ -55,21 +57,25 @@
 
     <v-container>
         <v-row justify="center" class="place-button">
-            <router-link to="/"><v-btn color="black">Place Order</v-btn></router-link>
+            <router-link to="/"><v-btn color="black" @click="removeAll()">Place Order</v-btn></router-link>
         </v-row>
     </v-container>
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapMutations } from "vuex";
 
 export default {
     computed: {
         ...mapState({
             products: "items",
+            shippingInfo: "shipping",
             total: (state) => state.amount[1]
         }),
     },
+    methods: {
+        ...mapMutations(["removeAll"])
+    }
 }
 
 </script>

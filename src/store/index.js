@@ -5,6 +5,11 @@ const vuexLocalStorage = new VuexPersist({
   key: 'my-app',
   storage: window.localStorage,
   autoRehydrate: true,
+  reducer: (state) => ({
+    items: state.items,
+    amount: state.amount,
+    shipping: state.shipping,
+ })
 });
 
 const store = createStore({
@@ -14,6 +19,14 @@ const store = createStore({
     return {
       items: [],
       amount: [],
+      shipping: {
+        fullName: '',
+        phoneNumber: '',
+        email: '',
+        city: '',
+        district: '',
+        address: '',
+      },
     };
   },
 
@@ -42,12 +55,42 @@ const store = createStore({
     },
     removeAll(state) {
       state.items = [];
+      state.amount = [];
+      state.shipping = { 
+        fullName: '',
+        phoneNumber: '',
+        email: '',
+        city: '',
+        district: '',
+        address: '',};
     },
+    
     setCheckOutAmount(state, [sub,total]){
       state.amount = [sub,total];
+    },
+
+    // shipping information
+
+    setFullName(state, fullName) {
+      state.shipping.fullName = fullName;
+    },
+    setPhoneNumber(state, phoneNumber) {
+      state.shipping.phoneNumber = phoneNumber;
+    },
+    setEmail(state, email) {
+      state.shipping.email = email;
+    },
+    setCity(state, city) {
+      state.shipping.city = city;
+    },
+    setDistrict(state, district){
+    state.shipping.district = district;
+    },
+    setAddress(state, address){
+    state.shipping.address = address;
     }
   },
-
+  
   getters: {
     cartQuantity: (state) => {
       return state.items.reduce((acc, cartItem) => {
@@ -55,6 +98,7 @@ const store = createStore({
       }, 0);
     },
   },
+
 });
 
 export default store;
