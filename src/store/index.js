@@ -4,6 +4,7 @@ const store = createStore({
   state() {
     return {
       items: [],
+      amount: [],
     };
   },
 
@@ -33,6 +34,9 @@ const store = createStore({
     removeAll(state) {
       state.items = [];
     },
+    setCheckOutAmount(state, [sub,total]){
+      state.amount = [sub,total];
+    }
   },
 
   getters: {

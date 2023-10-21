@@ -39,12 +39,12 @@
 
       <v-row justify="end">
         <v-col cols="4" class="total">Total :</v-col>
-        <v-col cols="2" class="total-amount">${{ subtotal }}</v-col>
+        <v-col cols="2" class="total-amount">${{ total }}</v-col>
       </v-row>
 
       <v-row justify="end" class="checkout-button">
         <router-link to="/shipping">
-          <v-btn color="black" :disabled="products.length === 0">Check Out</v-btn>
+          <v-btn color="black" :disabled="products.length === 0" @click="setCheckOutAmount([subtotal,total])">Check Out</v-btn>
         </router-link>
       </v-row>
     </v-container>
@@ -89,6 +89,7 @@ export default {
       "deleteItem",
       "incrementItemQuantity",
       "decrementItemQuantity",
+      "setCheckOutAmount"
     ]),
   },
 
@@ -102,6 +103,9 @@ export default {
         return acc + item.price * item.quantity;
       }, 0);
     },
+    total() {
+      return this.subtotal;
+    }
   },
 };
 </script>

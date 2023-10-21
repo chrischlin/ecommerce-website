@@ -4,7 +4,7 @@
             <div class="title">SUMMARY</div>
             <v-row>
                 <v-col class="pay">Subtotal</v-col>
-                <v-col class="pay-amount">${{ subtotal }}</v-col>
+                <v-col class="pay-amount">${{ sub }}</v-col>
             </v-row>
 
             <v-row>
@@ -16,7 +16,7 @@
 
             <v-row>
                 <v-col class="total">Total</v-col>
-                <v-col class="total-amount">${{ subtotal }}</v-col>
+                <v-col class="total-amount">${{ total }}</v-col>
             </v-row>
         </v-container>
 
@@ -43,13 +43,9 @@ export default {
     computed: {
         ...mapState({
             products: "items",
+            sub: (state) => state.amount[0],
+            total: (state) => state.amount[1],
         }),
-
-        subtotal() {
-            return this.products.reduce((acc, item) => {
-                return acc + item.price * item.quantity;
-            }, 0);
-        },
     },
 }
 
