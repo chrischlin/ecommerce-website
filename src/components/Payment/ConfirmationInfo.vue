@@ -50,7 +50,7 @@
 
     <v-container class="total">
         <div>Total</div>
-        <div>${{ subtotal }}</div>
+        <div>${{ total }}</div>
     </v-container>
 
     <v-container>
@@ -67,12 +67,8 @@ export default {
     computed: {
         ...mapState({
             products: "items",
+            total: (state) => state.amount[1]
         }),
-        subtotal() {
-            return this.products.reduce((acc, item) => {
-                return acc + item.price * item.quantity;
-            }, 0);
-        },
     },
 }
 

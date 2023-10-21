@@ -1,6 +1,15 @@
 import { createStore } from "vuex";
+import VuexPersist from "vuex-persist";
+
+const vuexLocalStorage = new VuexPersist({
+  key: 'my-app',
+  storage: window.localStorage,
+  autoRehydrate: true,
+});
 
 const store = createStore({
+  plugins: [vuexLocalStorage.plugin],
+
   state() {
     return {
       items: [],
