@@ -64,7 +64,7 @@ const store = createStore({
         district: '',
         address: '',};
     },
-    
+
     setCheckOutAmount(state, [sub,total]){
       state.amount = [sub,total];
     },
@@ -82,9 +82,11 @@ const store = createStore({
     },
     setCity(state, city) {
       state.shipping.city = city;
+      console.log('vuex city')
     },
     setDistrict(state, district){
     state.shipping.district = district;
+    console.log('vuex district')
     },
     setAddress(state, address){
     state.shipping.address = address;

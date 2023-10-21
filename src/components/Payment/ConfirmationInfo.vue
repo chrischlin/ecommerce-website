@@ -37,8 +37,8 @@
         <v-row class="flex-column info" no-gutters>
             <div class="subtitle">Shipping</div>
             <div class="line"></div>
-            <v-col>City:</v-col>
-            <v-col>District:</v-col>
+            <v-col>City: {{ shippingInfo.city }}</v-col>
+            <v-col>District: {{ shippingInfo.district }}</v-col>
             <v-col>Address: {{ shippingInfo.address }}</v-col>
             <v-col>Fees: Free</v-col>
         </v-row>

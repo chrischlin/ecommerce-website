@@ -51,11 +51,11 @@
             <div class="subtitle">Address</div>
             <v-row>
                 <v-col>
-                    <v-select :items="city" label="City" variant="underlined" @input="setCity(city)"></v-select>
+                    <v-select v-model="selectedCity" :items="cityItems" label="City" variant="underlined"></v-select>
                 </v-col>
                 <v-col>
-                    <v-select :items="district" label="District" variant="underlined"
-                        @input="setDistrict(district)"></v-select>
+                    <v-select v-model="selectedDistrict" :items="districtItems" label="District"
+                        variant="underlined"></v-select>
                 </v-col>
             </v-row>
             <v-row>
@@ -70,7 +70,7 @@
     </v-form>
     <v-row justify="center" class="next-button">
         <router-link to="/payment">
-            <v-btn color="black">Next</v-btn>
+            <v-btn color="black" @click="setCity(selectedCity); setDistrict(selectedDistrict)">Next</v-btn>
         </router-link>
     </v-row>
 </template>
@@ -109,8 +109,10 @@ export default {
                     return 'E-mail must be valid.';
                 },
             ],
-            city: ['Taipei City', 'New Taipei City'],
-            district: ['Wenshan District', 'Neihu District'],
+            cityItems: ['Taipei City', 'New Taipei City'],
+            selectedCity: '',
+            districtItems: ['Wenshan District', 'Neihu District'],
+            selectedDistrict: '',
             address: '',
             addressRules: [
                 value => {
@@ -121,6 +123,7 @@ export default {
         }
     },
 
+
     methods: {
         ...mapMutations([
             "setFullName",
@@ -129,7 +132,7 @@ export default {
             "setCity",
             "setDistrict",
             "setAddress",
-        ])
+        ]),
     }
 }
 </script>
