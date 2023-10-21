@@ -58,54 +58,59 @@
     </v-form>
     <v-container>
         <v-row justify="center" class="next-button">
-            <router-link to="/confirmation"><v-btn color="black">Next</v-btn></router-link>
+            <router-link to="/confirmation"><v-btn color="black"
+                    @click="setPaymentMethod(selectedPaymentMethod)">Next</v-btn></router-link>
         </v-row>
     </v-container>
 </template>
 
 <script>
+import { mapMutations } from "vuex";
+
 export default {
     data() {
-     return{
-        name: '',
-        nameRules: [
-            value => {
-                if (value) return true;
-                return 'Name is required';
-            },
-        ],
-        cardNumber: '',
-        formattedCardNumber: '',
-        cardRules: [
-            (value) => {
-                if (value) return true;
-                return 'Card number is required.';
-            },
-        ],
-        expiration: '',
-        expirationRules: [
-            (value) => {
-                if (value) {
+        return {
+            name: '',
+            nameRules: [
+                value => {
                     if (value) return true;
-                    return 'Enter a valid mm/yy format (e.g., 12/23).';
-                }
-                return 'Expiration is required.';
-            },
-        ],
-        securityCode: '',
-        securityCodeRules: [
-            value => {
-                if (value) {
-                    if (/^\d+$/.test(value)) return true;
-                    return 'Security code must contain only numbers.';
-                }
-                return 'Security code is required.';
-            },
-        ],
-        selectedPaymentMethod: ['Credit Card', 'PayPal'],
-     }
+                    return 'Name is required';
+                },
+            ],
+            cardNumber: '',
+            formattedCardNumber: '',
+            cardRules: [
+                (value) => {
+                    if (value) return true;
+                    return 'Card number is required.';
+                },
+            ],
+            expiration: '',
+            expirationRules: [
+                (value) => {
+                    if (value) {
+                        if (value) return true;
+                        return 'Enter a valid mm/yy format (e.g., 12/23).';
+                    }
+                    return 'Expiration is required.';
+                },
+            ],
+            securityCode: '',
+            securityCodeRules: [
+                value => {
+                    if (value) {
+                        if (/^\d+$/.test(value)) return true;
+                        return 'Security code must contain only numbers.';
+                    }
+                    return 'Security code is required.';
+                },
+            ],
+            selectedPaymentMethod: '',
+        }
     },
     methods: {
+        ...mapMutations(["setPaymentMethod"]),
+
         formatCardNumber() {
             // Remove any non-numeric characters (non-digits)
             this.formattedCardNumber = this.formattedCardNumber.replace(/\D/g, '');

@@ -9,6 +9,7 @@ const vuexLocalStorage = new VuexPersist({
     items: state.items,
     amount: state.amount,
     shipping: state.shipping,
+    paymentMethod: state.paymentMethod
  })
 });
 
@@ -27,6 +28,7 @@ const store = createStore({
         district: '',
         address: '',
       },
+      paymentMethod:''
     };
   },
 
@@ -82,14 +84,18 @@ const store = createStore({
     },
     setCity(state, city) {
       state.shipping.city = city;
-      console.log('vuex city')
     },
     setDistrict(state, district){
-    state.shipping.district = district;
-    console.log('vuex district')
+      state.shipping.district = district;
     },
     setAddress(state, address){
-    state.shipping.address = address;
+      state.shipping.address = address;
+    },
+
+    // payment
+
+    setPaymentMethod(state, method){
+      state.paymentMethod = method;
     }
   },
   

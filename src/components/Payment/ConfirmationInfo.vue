@@ -45,7 +45,7 @@
         <v-row class="flex-column info" no-gutters>
             <div class="subtitle">Payment</div>
             <div class="line"></div>
-            <v-col>Credit card</v-col>
+            <v-col>{{ paymentInfo }}</v-col>
         </v-row>
 
     </v-container>
@@ -70,6 +70,7 @@ export default {
         ...mapState({
             products: "items",
             shippingInfo: "shipping",
+            paymentInfo: "paymentMethod",
             total: (state) => state.amount[1]
         }),
     },
