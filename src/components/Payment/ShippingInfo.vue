@@ -81,14 +81,12 @@ import { mapState, mapMutations } from "vuex";
 export default {
     data() {
         return {
-            fullName: '',
             nameRules: [
                 value => {
                     if (value) return true;
                     return 'Full name is required';
                 },
             ],
-            phoneNumber: '',
             phoneRules: [
                 value => {
                     if (value) {
@@ -98,7 +96,6 @@ export default {
                     return 'Phone number is required.';
                 },
             ],
-            email: '',
             emailRules: [
                 value => {
                     if (value) return true;
@@ -165,7 +162,6 @@ export default {
             // ],
 
             selectedDistrict: '',
-            address: '',
             addressRules: [
                 value => {
                     if (value) return true;
@@ -173,6 +169,16 @@ export default {
                 },
             ],
         }
+    },
+    computed: {
+        ...mapState({
+            fullName: (state) => state.shipping.fullName,
+            phoneNumber: (state) => state.shipping.phoneNumber,
+            email: (state) => state.shipping.email,
+            selectedCity: (state) => state.shipping.city,
+            selectedDistrict: (state) => state.shipping.district,
+            address: (state) => state.shipping.address,
+        })
     },
 
     methods: {
