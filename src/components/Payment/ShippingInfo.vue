@@ -69,9 +69,9 @@
 
         </v-container>
     </v-form>
-    <v-row justify="center" class="next-button">
-        <router-link to="/payment">
-            <v-btn color="black">Next</v-btn>
+    <v-row justify="center">
+        <router-link :to="isFormEmpty ? '' : '/payment'">
+            <v-btn class="next-button" color="black" :disabled="isFormEmpty">Next</v-btn>
         </router-link>
     </v-row>
 </template>
@@ -108,7 +108,6 @@ export default {
                 },
             ],
             cityItems: ['Taipei City'],
-            selectedCity: '',
             districtItems: [
                 'Wanhua District',
                 'Datong District',
@@ -123,8 +122,6 @@ export default {
                 'Beitou District',
                 'Wenshan District'
             ],
-
-            selectedDistrict: '',
             addressRules: [
                 value => {
                     if (value) return true;
@@ -192,6 +189,19 @@ export default {
                 this.$store.commit('updateAddress', value)
             }
         },
+        isFormEmpty() {
+            if (
+                !this.fullName ||
+                !this.phoneNumber ||
+                !this.email ||
+                !this.city ||
+                !this.district ||
+                !this.address
+            ) {
+                return true;
+            }
+            return false;
+        },
     },
 
     methods: {
@@ -246,4 +256,5 @@ export default {
 .next-button {
     margin-top: 80px;
     margin-bottom: 100px;
-}</style>
+}
+</style>
