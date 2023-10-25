@@ -56,6 +56,9 @@
             <v-row></v-row>
         </v-container>
     </v-form>
+    <div class="paypal" v-if="selectedPaymentMethod === 'PayPal'">After click "Place Order" in the next page, you will be
+        redirect to Paypal
+        to complete your purchase securely.</div>
     <v-container>
         <v-row justify="center" class="next-button">
             <router-link :to="isPaymentSelected ? '' : '/confirmation'">
@@ -197,6 +200,11 @@ export default {
 
 .credit-card {
     width: 50%;
+}
+
+.paypal {
+    width: 80%;
+    color: grey;
 }
 
 .next-button {

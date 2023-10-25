@@ -65,6 +65,7 @@
                         label="Address (Rd.,Aly.,No.,Floor, etc)" variant="underlined"></v-text-field>
                 </v-col>
             </v-row>
+            <div class="notice">*At this time, we are exclusively providing delivery services within Taipei, Taiwan.</div>
 
 
         </v-container>
@@ -256,5 +257,10 @@ export default {
 .next-button {
     margin-top: 80px;
     margin-bottom: 100px;
+}
+
+.notice {
+    font-size: 12px;
+    color: grey;
 }
 </style>
