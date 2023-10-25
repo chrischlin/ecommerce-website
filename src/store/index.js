@@ -74,22 +74,22 @@ const store = createStore({
 
     // shipping information
 
-    setFullName(state, fullName) {
+    updateFullName(state, fullName) {
       state.shipping.fullName = fullName;
     },
-    setPhoneNumber(state, phoneNumber) {
+    updatePhoneNumber(state, phoneNumber) {
       state.shipping.phoneNumber = phoneNumber;
     },
-    setEmail(state, email) {
+    updateEmail(state, email) {
       state.shipping.email = email;
     },
-    setCity(state, city) {
+    updateCity(state, city) {
       state.shipping.city = city;
     },
-    setDistrict(state, district){
+    updateDistrict(state, district){
       state.shipping.district = district;
     },
-    setAddress(state, address){
+    updateAddress(state, address){
       state.shipping.address = address;
     },
 

@@ -29,18 +29,18 @@
             <div class="subtitle">Contact</div>
             <v-row>
                 <v-col>
-                    <v-text-field v-model="fullName" :rules="nameRules" label="Full name" variant="underlined"
-                        @input="setFullName(fullName)"></v-text-field>
+                    <v-text-field v-model="fullName" :value="fullName" @input="updateFullName" :rules="nameRules"
+                        label="Full name" variant="underlined"></v-text-field>
                 </v-col>
                 <v-col>
-                    <v-text-field v-model="phoneNumber" :rules="phoneRules" label="Phone number" variant="underlined"
-                        @input="setPhoneNumber(phoneNumber)"></v-text-field>
+                    <v-text-field v-model="phoneNumber" :value="phoneNumber" @input="updatePhoneNumber" :rules="phoneRules"
+                        label="Phone number" variant="underlined"></v-text-field>
                 </v-col>
             </v-row>
             <v-row>
                 <v-col>
-                    <v-text-field v-model="email" :rules="emailRules" label="E-mail" variant="underlined"
-                        @input="setEmail(email)"></v-text-field>
+                    <v-text-field v-model="email" :value="email" @input="updateEmail" :rules="emailRules" label="E-mail"
+                        variant="underlined"></v-text-field>
                 </v-col>
             </v-row>
             <v-row></v-row>
@@ -51,17 +51,18 @@
             <div class="subtitle">Address</div>
             <v-row>
                 <v-col>
-                    <v-select v-model="selectedCity" :items="cityItems" label="City" variant="underlined"></v-select>
+                    <v-select v-model="city" :value="city" @input="updateCity" :items="cityItems" label="City"
+                        variant="underlined"></v-select>
                 </v-col>
                 <v-col>
-                    <v-select v-model="selectedDistrict" :items="districtItems" label="District"
-                        variant="underlined"></v-select>
+                    <v-select v-model="district" :value="district" @input="updateDistrict" :items="districtItems"
+                        label="District" variant="underlined"></v-select>
                 </v-col>
             </v-row>
             <v-row>
                 <v-col>
-                    <v-text-field v-model="address" :rules="addressRules" label="Address (Rd.,Aly.,No.,Floor, etc)"
-                        variant="underlined" @input="setAddress(address)"></v-text-field>
+                    <v-text-field v-model="address" :value="address" @input="updateAddress" :rules="addressRules"
+                        label="Address (Rd.,Aly.,No.,Floor, etc)" variant="underlined"></v-text-field>
                 </v-col>
             </v-row>
 
@@ -70,13 +71,13 @@
     </v-form>
     <v-row justify="center" class="next-button">
         <router-link to="/payment">
-            <v-btn color="black" @click="setCity(selectedCity); setDistrict(selectedDistrict)">Next</v-btn>
+            <v-btn color="black">Next</v-btn>
         </router-link>
     </v-row>
 </template>
 
 <script>
-import { mapState, mapMutations } from "vuex";
+import { mapState } from "vuex";
 
 export default {
     data() {
@@ -123,44 +124,6 @@ export default {
                 'Wenshan District'
             ],
 
-            // NewTaipeiCity: [
-            //     "Banqiao District",
-            //     "Sanchong District",
-            //     "Zhonghe District",
-            //     "Yonghe District",
-            //     "Xinzhuang District",
-            //     "Tucheng District",
-            //     "Shulin District",
-            //     "Sanxia District",
-            //     "Yingge District",
-            //     "Sanchong District",
-            //     "Xindian District",
-            //     "Pinglin District",
-            //     "Wulai District",
-            //     "Yongkang District",
-            //     "Shenkeng District",
-            //     "Shiding District",
-            //     "Ruinan District",
-            //     "Gongliao District",
-            //     "Jinshan District",
-            //     "Wanli District",
-            //     "Xizhi District",
-            //     "Ruifang District",
-            //     "Pingxi District",
-            //     "Shuangxi District",
-            //     "Gufen District",
-            //     "Taishan District",
-            //     "Luzhou District",
-            //     "Wugu District",
-            //     "Bali District",
-            //     "Tamsui District",
-            //     "Sanzhi District",
-            //     "Shimen District",
-            //     "Jinshan District",
-            //     "Wanli District",
-            //     "Gongliao District",
-            // ],
-
             selectedDistrict: '',
             addressRules: [
                 value => {
@@ -170,27 +133,88 @@ export default {
             ],
         }
     },
+
     computed: {
         ...mapState({
             fullName: (state) => state.shipping.fullName,
             phoneNumber: (state) => state.shipping.phoneNumber,
             email: (state) => state.shipping.email,
-            selectedCity: (state) => state.shipping.city,
-            selectedDistrict: (state) => state.shipping.district,
+            city: (state) => state.shipping.city,
+            district: (state) => state.shipping.district,
             address: (state) => state.shipping.address,
-        })
+        }),
+
+        fullName: {
+            get() {
+                return this.$store.state.shipping.fullName
+            },
+            set(value) {
+                this.$store.commit('updateFullName', value)
+            }
+        },
+        phoneNumber: {
+            get() {
+                return this.$store.state.shipping.phoneNumber
+            },
+            set(value) {
+                this.$store.commit('updatePhoneNumber', value)
+            }
+        },
+        email: {
+            get() {
+                return this.$store.state.shipping.email
+            },
+            set(value) {
+                this.$store.commit('updateEmail', value)
+            }
+        },
+        city: {
+            get() {
+                return this.$store.state.shipping.city
+            },
+            set(value) {
+                this.$store.commit('updateCity', value)
+            }
+        },
+        district: {
+            get() {
+                return this.$store.state.shipping.district
+            },
+            set(value) {
+                this.$store.commit('updateDistrict', value)
+            }
+        },
+        address: {
+            get() {
+                return this.$store.state.shipping.address
+            },
+            set(value) {
+                this.$store.commit('updateAddress', value)
+            }
+        },
     },
 
     methods: {
-        ...mapMutations([
-            "setFullName",
-            "setPhoneNumber",
-            "setEmail",
-            "setCity",
-            "setDistrict",
-            "setAddress",
-        ]),
+        updateFullName(e) {
+            this.$store.commit('updateFullName', e.target.value)
+        },
+        updatePhoneNumber(e) {
+            this.$store.commit('updatePhoneNumber', e.target.value)
+        },
+        updateEmail(e) {
+            this.$store.commit('updateEmail', e.target.value)
+        },
+        updateCity(e) {
+            this.$store.commit('updateCity', e.target.value)
+        },
+        updateDistrict(e) {
+            this.$store.commit('updateDistrict', e.target.value)
+        },
+        updateAddress(e) {
+            this.$store.commit('updateAddress', e.target.value)
+        },
     }
+
 }
 
 </script>
@@ -222,5 +246,4 @@ export default {
 .next-button {
     margin-top: 80px;
     margin-bottom: 100px;
-}
-</style>
+}</style>
