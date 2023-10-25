@@ -58,8 +58,11 @@
     </v-form>
     <v-container>
         <v-row justify="center" class="next-button">
-            <router-link to="/confirmation"><v-btn color="black"
-                    @click="setPaymentMethod(selectedPaymentMethod)">Next</v-btn></router-link>
+            <router-link :to="isPaymentSelected ? '' : '/confirmation'">
+                <v-btn color="black" @click="setPaymentMethod(selectedPaymentMethod)" :disabled="isPaymentSelected">
+                    Next
+                </v-btn>
+            </router-link>
         </v-row>
     </v-container>
 </template>
@@ -108,6 +111,16 @@ export default {
             selectedPaymentMethod: '',
         }
     },
+
+    computed: {
+        isPaymentSelected() {
+            if (this.selectedPaymentMethod === '') {
+                return true;
+            }
+            return false;
+        }
+    },
+
     methods: {
         ...mapMutations(["setPaymentMethod"]),
 
